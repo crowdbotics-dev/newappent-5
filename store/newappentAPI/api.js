@@ -8,6 +8,24 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_frte_list(payload) {
+  return newappentAPI.get(`/api/v1/frte/`)
+}
+function api_v1_frte_create(payload) {
+  return newappentAPI.post(`/api/v1/frte/`, payload)
+}
+function api_v1_frte_retrieve(payload) {
+  return newappentAPI.get(`/api/v1/frte/${payload.id}/`)
+}
+function api_v1_frte_update(payload) {
+  return newappentAPI.put(`/api/v1/frte/${payload.id}/`, payload)
+}
+function api_v1_frte_partial_update(payload) {
+  return newappentAPI.patch(`/api/v1/frte/${payload.id}/`, payload)
+}
+function api_v1_frte_destroy(payload) {
+  return newappentAPI.delete(`/api/v1/frte/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return newappentAPI.post(`/api/v1/login/`, payload)
 }
@@ -101,6 +119,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_frte_list,
+  api_v1_frte_create,
+  api_v1_frte_retrieve,
+  api_v1_frte_update,
+  api_v1_frte_partial_update,
+  api_v1_frte_destroy,
   api_v1_login_create,
   api_v1_signup_create,
   modules_two_factor_authentication_2fa_retrieve,
